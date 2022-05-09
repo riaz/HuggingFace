@@ -32,7 +32,10 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            conda env create -f environment.yml
+            conda config --set restore_free_channel true
+            conda create -n hugginface python=3.9
+            conda env update --file environment.yml
+      - run: pip install libgfortran5 libgfortran tox
       - run:
           name: run tests
           command: |
