@@ -20,7 +20,8 @@ Testing and Running HuggingFace Models and just having fun
 	#Installing tox
 	pip install tox
 
-
+	# Saving the local dev env for CI/CD
+        conda env export --no-builds > environment.yml
 ### Developement
 
 	Make sure you name the commits after JIRA tickets/ meaningful branch
