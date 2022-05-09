@@ -1,6 +1,8 @@
 # HuggingFace
 Testing and Running HuggingFace Models and just having fun
 
+[![riaz](https://circleci.com/gh/riaz/HuggingFace/tree/v0.0.1.svg?style=svg)](https://circleci.com/gh/riaz/HuggingFace/?branch=v0.0.1)
+
 
 ### Setup
 
@@ -20,8 +22,10 @@ Testing and Running HuggingFace Models and just having fun
 	#Installing tox
 	pip install tox
 
-	# Saving the local dev env for CI/CD
-        conda env export --no-builds > environment.yml
+	# Saving envionment into environment.yml for CI/CD
+	conda env export > environment.yml
+
+
 ### Developement
 
 	Make sure you name the commits after JIRA tickets/ meaningful branch
@@ -51,3 +55,21 @@ Testing and Running HuggingFace Models and just having fun
 	tox -e publish -- --repository pypi
 
 ### Tox How-To
+
+	# Build a package in isolation
+	tox -e build
+
+	# Clean old builds
+	tox -e clean
+
+	# Create docs for the project
+	tox -e docs
+
+	# Create/Invoke doc tests
+	tox -e doctests
+
+	# Check for broken links in the documentation
+	tox -e linkcheck
+
+	# Publish the package to a package index server
+	tox -e publish
